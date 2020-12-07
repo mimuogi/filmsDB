@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MoviesService, Movie } from '../api/movies.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,22 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  availableMovies: any[] = [];
+  movieTitle: string;
+  constructor(private MService: MoviesService) {}
+
+  getMovies(event){
+    if (this.movieTitle.length > 0) {
+      this.MService.getMovies(this.movieTitle)
+      .subscribe(
+      (movies) => {
+        this.availableMovies = movies['results']
+      },
+      (error) => {
+        console.error(error)
+      }
+    )
+    }
+  }
 
 }
