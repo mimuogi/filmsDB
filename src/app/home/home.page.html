@@ -1,20 +1,27 @@
+<link
+  href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+  rel="stylesheet"
+/>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> FilmsDB </ion-title>
+    <ion-title> <ion-icon name="film"></ion-icon> FilmsDB </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="ion-padding">
     <ion-item>
-      <ion-label position="floating">Search your film here </ion-label>
+      <ion-label position="floating">
+        <ion-icon name="search"></ion-icon> Search your film here
+      </ion-label>
       <ion-input [(ngModel)]="movieTitle" (ionChange)="getMovies()"></ion-input>
     </ion-item>
   </div>
 
   <div>
     <ion-list-header>
-      <ion-label>Film list</ion-label>
+      <ion-label> <ion-icon name="list"></ion-icon> Films</ion-label>
     </ion-list-header>
     <ion-list>
       <ion-item

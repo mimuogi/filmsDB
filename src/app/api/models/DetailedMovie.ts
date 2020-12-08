@@ -1,14 +1,17 @@
+import { ApiCountryResult } from "./ApiResults";
+
 export class DetailedMovie {
   id: string;
   title: string;
   originalTitle: string;
-  originalLang: string;
+  originalLanguage: string;
   director: string;
-  country: string;
+  countries: ApiCountryResult[];
   date: string;
   overview: string;
   image: string;
-  average_mark: number;
+  average_rate: number;
   genres: [];
-  adult: boolean;
+  explicit: boolean;
+  tagline: string;
 }
