@@ -1,16 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      FilmsDB
-    </ion-title>
+    <ion-title> FilmsDB </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class = 'ion-padding'>
+  <div class="ion-padding">
     <ion-item>
       <ion-label position="floating">Search your film here </ion-label>
-      <ion-input [(ngModel)]='movieTitle' (ionChange)='getMovies($event)'></ion-input>
+      <ion-input [(ngModel)]="movieTitle" (ionChange)="getMovies()"></ion-input>
     </ion-item>
   </div>
 
@@ -19,10 +17,13 @@
       <ion-label>Film list</ion-label>
     </ion-list-header>
     <ion-list>
-      <ion-item button *ngFor='let movie of availableMovies'  >
+      <ion-item
+        button
+        *ngFor="let movie of availableMovies"
+        [routerLink]="['/details', movie.id]"
+      >
         <ion-text> {{movie.title}} </ion-text>
       </ion-item>
     </ion-list>
-
   </div>
 </ion-content>

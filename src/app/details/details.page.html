@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{detailedMovie.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-grid>
+      <ion-row class="ion-padding-horizontal">
+        <ion-col>
+          <ion-card-header>
+            <ion-card-title>{{ detailedMovie.title }}</ion-card-title>
+            <ion-card-subtitle>{{ detailedMovie.date }}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-text>{{ detailedMovie.overview }}</ion-text>
+          </ion-card-content></ion-col
+        >
+
+        <ion-col>
+          <img [src]="detailedMovie.image" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-col>
+      <ion-text> Rating: {{detailedMovie.average_mark}}</ion-text>
+
+      <ion-row *ngFor="let genre of detailedMovie.genres">
+        <ion-chip>{{ genre.name }}</ion-chip>
+      </ion-row>
+    </ion-col>
+  </ion-card>
+</ion-content>
