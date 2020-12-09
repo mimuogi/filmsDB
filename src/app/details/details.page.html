@@ -28,17 +28,19 @@
               *ngFor="let country of detailedMovie.countries"
               class="countryFlag"
               [src]="country.flag"
-              width="24px"
-              height="24px"
+              width="16px"
+              height="16px"
             />
           </ion-card-subtitle>
           <ion-card-content>
             <ion-text class="ion-padding-vertical"
               >{{detailedMovie.overview}}</ion-text
             >
-            <ion-text> {{detailedMovie.tagline}} </ion-text>
           </ion-card-content>
-          <ion-text *ngIf="detailedMovie.tagline">
+          <ion-text
+            class="ion-padding-horizontal"
+            *ngIf="detailedMovie.tagline"
+          >
             "{{detailedMovie.tagline}}"
           </ion-text>
           <ion-row>
